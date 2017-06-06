@@ -18,11 +18,11 @@ git config --global user.name "$1"
 git config --global user.email "$2"
 
 #download a vimrc and tmuxconf file
-mkdir ./tempDir
-git clone https://github.com/zalaby12/vim.git ./tempDir
-mv ./temp/.bash_profile ~
-mv ./temp/.vimrc ~
-mv ./temp/.tmux.conf ~
+mkdir ~/tempDir
+git clone https://github.com/zalaby12/vim.git ~/tempDir
+cp ~/tempDir/.bash_profile ~/
+cp ~/tempDir/.vimrc ~/
+cp ~/tempDir/.tmux.conf ~/
 rm -rf ./tempDir
 
 #and any plugins for vim we might need/want, starting with Vundle
