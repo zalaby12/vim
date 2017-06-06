@@ -162,6 +162,9 @@ Bundle 'kchmck/vim-coffee-script'
 " requires exuberant ctags
 Bundle 'majutsushi/tagbar'
 
+" youcomplete me
+Bundle 'Valloric/YouCompleteMe'
+
 " END OF VUNDLE PLUGINS
 """"""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on     " required!
@@ -200,7 +203,7 @@ let g:syntastic_auto_jump=0
 "show the error list automatically
 let g:syntastic_auto_loc_list=1
 "don't care about warnings
-let g:syntastic_quiet_warnings=0
+"let g:syntastic_quiet_warnings=0
 
 " Coffee Script Compilation
 " Compile the current file into a vertcally split screen
