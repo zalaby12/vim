@@ -1,0 +1,57 @@
+#!/bin/bash
+
+#install xcode CL tools
+xcode-select --install
+
+#now let's actually install homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+#run brew doctor to make sure everything is installed correctly
+brew doctor
+
+#install homebrew cask so we can install other fun things...
+brew install caskroom/cask/brew-cask
+
+#now let's install git with homebrew, incase it didn't install with xcode CL tools and configure the global user/settings
+brew install git
+git config --global user.name "$1"
+git config --global user.email "$2"
+
+#download a vimrc and tmuxconf file
+mkdir ./tempDir
+git clone https://github.com/zalaby12/vim.git ./tempDir
+mv ./temp/.bash_profile ~
+mv ./temp/.vimrc ~
+mv ./temp/.tmux.conf ~
+rm -rf ./tempDir
+
+#and any plugins for vim we might need/want, starting with Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+#download a vimrc from somewhere... not sure where we want this from... it can just be passed around for right now
+
+#and finally let's do java, ant, maven, and our coding stuff.
+
+#java first because... well, java...
+brew cask install java
+java -version #this is to make sure we have the right version
+
+#ant
+brew install ant
+ant -version
+
+#tmux and setting colors to be right... passed around, once again
+brew install tmux
+#git clone .... ~
+
+#maven
+brew install maven
+mvn -version
+
+#node
+brew install node
+npm install -g grunt-cli #not sure what this does but the website said to do it...
+
+
+
+
