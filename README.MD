@@ -1,4 +1,5 @@
 The script installs the following software for your computer (Apple only)::
+
     - xcode command line tools
     - homebrew (and homebrew cask)
     - git (including configuring username and email)
