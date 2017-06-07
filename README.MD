@@ -17,7 +17,11 @@ The script installs the following software for your computer (Apple only)::
 To install, run the following commands in your terminal
 
 git clone https://github.com/zalaby12/vim.git
+
 cd vim
+
 ./installSoftwareFromScratch "git user name" "git email" [-vimrc] [-bash] [-tmux]
+
 cd ..
+
 rm -rf vim
