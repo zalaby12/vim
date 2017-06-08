@@ -13,24 +13,17 @@ brew doctor
 brew install caskroom/cask/brew-cask
 
 #now let's install git with homebrew, incase it didn't install with xcode CL tools and configure the global user/settings
-brew install git
-git config --global user.name "$1"
-git config --global user.email "$2"
+#brew install git
+#git config --global user.name "$1"
+#git config --global user.email "$2"
 
 #install vimrc, bash_profile, and tmux.cong file if the arguments specify
 mkdir ~/tempDir
 git clone https://github.com/zalaby12/vim.git ~/tempDir
-for argument in $@ do
-    LOWERCASEARGUMENT=$(echo "$argument" | tr '[:upper:]' '[:lower:]')
-    if [ "$LOWERCASEARGUMENT" == "-vimrc" ]; then
-        cp ~/tempDir/.bash_profile ~/
-    elif [ "$LOWERCASEARGUMENT" == "-bash" ]; then
-        cp ~/tempDir/.vimrc ~/
-    elif [ "$LOWERCASEARGUMENT" == "-tmux" ]; then
-        cp ~/tempDir/.tmux.conf ~/
-    fi
-done
-rm -rf ./tempDir
+cp ~/tempDir/.bash_profile ~/
+cp ~/tempDir/.vimrc ~/
+cp ~/tempDir/.tmux.conf ~/
+rm -rf ~/tempDir
 
 #and any plugins for vim we might need/want, starting with Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
