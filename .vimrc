@@ -15,6 +15,7 @@ set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
+set hlsearch
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -165,6 +166,8 @@ Bundle 'majutsushi/tagbar'
 " youcomplete me
 Bundle 'Valloric/YouCompleteMe'
 
+Plugin 'Yggdroot/indentLine'
+
 " END OF VUNDLE PLUGINS
 """"""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on     " required!
@@ -204,6 +207,9 @@ let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=1
 "don't care about warnings
 "let g:syntastic_quiet_warnings=0
+
+"now disable eclimm, i suppose? 
+let g:EclimFileTypeValidate = 0
 
 " Coffee Script Compilation
 " Compile the current file into a vertcally split screen
